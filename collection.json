@@ -1,0 +1,20 @@
+{
+  "info": { "name": "API Testing Demo", "_postman_id": "uuid", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "item": [
+    {
+      "name": "Start Production",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" },
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "url": { "raw": "{{baseUrl}}/production/start", "host": ["{{baseUrl}}"], "path": ["production", "start"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"transactionId\": \"{{guid}}\",\n  \"serialNo\": \"SN-{{randomInt}}\",\n  \"productId\": \"DEMO-001\",\n  \"startTime\": \"{{timestamp}}\",\n  \"status\": \"Running\"\n}"
+        }
+      }
+    }
+  ]
+}
